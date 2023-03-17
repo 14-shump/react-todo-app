@@ -1,7 +1,8 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
+import Todo from './components/Todo'
 
 const rootElement = document.getElementById('root')!;
 const root = createRoot(rootElement);
 
-root.render(<h1>ToDoアプリ</h1>);
+root.render(<Todo />);

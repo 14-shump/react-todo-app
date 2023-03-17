@@ -1,8 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using react_todo_app.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<TodoContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("TodoContext")));
 
 var app = builder.Build();
 
